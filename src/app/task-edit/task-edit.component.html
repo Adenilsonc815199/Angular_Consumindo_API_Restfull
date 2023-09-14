@@ -1,0 +1,18 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Atualizar Tarefa</h3>
+    <div class="mb-3">
+      <input type="text" [(ngModel)]="taskData.titulo" class="form-control" placeholder="Titulo" />
+    </div>
+    <div class="mb-3">
+      <input type="text" [(ngModel)]="taskData.descricao" class="form-control" placeholder="Descrição" />
+    </div>
+    <div class="mb-3">
+      <input type="text" [(ngModel)]="taskData.prioridade" class="form-control" placeholder="Prioridade" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-lg btn-block" (click)="updateTask()"> Atualizar Tarefa
+      </button>
+    </div>
+  </div>
+</div>

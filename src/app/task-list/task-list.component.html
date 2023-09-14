@@ -1,0 +1,37 @@
+<div class="container custom-container-2 mt-5">
+  <div class="no-data text-center" *ngIf="Task.length == 0">
+    <p>Não retornou nenhuma tarefa</p>
+    <button class="btn btn-outline-primary" routerLink="/create-task">
+      Adicionar nova tarefa
+    </button>
+  </div>
+  <div *ngIf="Task.length !== 0">
+    <h3 class="mb-3 text-center">Lista de Tarefas</h3>
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Prioridade</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="table-light">
+          <tr *ngFor="let task of Task">
+            <td>{{ task.idTarefa }}</td>
+            <td>{{ task.titulo }}</td>
+            <td>{{ task.descricao }}</td>
+            <td>{{ task.prioridade }}</td>
+            <td>
+              <span class="edit btn btn-sm btn-outline-primary me-2"
+                routerLink="/task-edit/{{task.idTarefa}}">Editar</span>
+              <span class="delete edit btn btn-sm btn-outline-danger" (click)="deleteTask(task.idTarefa)">Deletar</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
